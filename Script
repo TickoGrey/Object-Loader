@@ -1,0 +1,20 @@
+local cs = game:GetService("CollectionService")
+while true do
+	wait()
+	local players = game.Players:GetPlayers()
+	for i=1, #players do
+		local char = players[i].Character
+		if char then
+			local objects = cs:GetTagged("Loadables")
+			for i=1, #objects do
+				if (objects[i].Position - char.HumanoidRootPart.Position).Magnitude >= 100 then
+					objects[i].Transparency = 1
+					objects[i].CanCollide = false
+				else
+					objects[i].Transparency = 0
+					objects[i].CanCollide = true
+				end
+			end	
+		end
+	end
+end
