@@ -10,9 +10,11 @@ while true do
 				if (objects[i].Position - char.HumanoidRootPart.Position).Magnitude >= 100 then
 					objects[i].Transparency = 1
 					objects[i].CanCollide = false
+					objects[i].Anchored = true
 				else
 					objects[i].Transparency = 0
 					objects[i].CanCollide = true
+					objects[i].Anchored = false
 				end
 			end	
 		end
